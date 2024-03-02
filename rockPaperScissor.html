@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RockPaperScissor</title>
+    </head>
+    <body>
+        <script>
+            let myArray = ['Rock','Paper','Scissors'];
+
+            function getComputerChoice(){
+                let value = Math.floor(Math.random()*3);
+                return value;
+            }
+            var count = 0;
+            while(count < 5){
+
+                let choice = getComputerChoice();
+                //console.log(myArray[choice]);  
+                let userChoice = prompt('Enter Your Choice "Rock,Paper,Scissors"').toLowerCase();
+                let y;
+                if(userChoice == 'rock'){
+                    y = 0;
+                    result(choice ,y);
+                }
+                else if(userChoice == 'paper'){
+                    y = 1;
+                    result(choice ,y);
+                }
+                else if(userChoice == 'scissors'){
+                    y = 2;
+                    result(choice ,y);
+                }
+                else{
+                    console.log('Enter correctly')
+                }
+            }
+
+            function result(x, y){
+                let a = y - x;
+
+                if(a == 2){
+                    console.log(`Lose! ${myArray[x]} beats ${myArray[y]}`);
+                } 
+                else if (a > 0 || a == -2){
+                    console.log(`Win! ${myArray[y]} beats ${myArray[x]}`);
+                }
+                else if (a == 0) {
+                    console.log('Draw');
+                }
+                else{
+                    console.log(`Lose! ${myArray[x]} beats ${myArray[y]}`);
+                }
+
+                count++;
+            }
+         
+        </script>
+    </body>
+</html>
