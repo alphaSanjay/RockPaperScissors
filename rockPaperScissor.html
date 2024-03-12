@@ -2,58 +2,33 @@
 <html>
     <head>
         <title>RockPaperScissor</title>
+        <script src="rps.js" defer></script>
+        <link rel="Stylesheet" href="rps.css">
     </head>
     <body>
-        <script>
-            let myArray = ['Rock','Paper','Scissors'];
+        <div class="holder">
+        <div>
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
 
-            function getComputerChoice(){
-                let value = Math.floor(Math.random()*3);
-                return value;
-            }
-            var count = 0;
-            while(count < 5){
-
-                let choice = getComputerChoice();
-                //console.log(myArray[choice]);  
-                let userChoice = prompt('Enter Your Choice "Rock,Paper,Scissors"').toLowerCase();
-                let y;
-                if(userChoice == 'rock'){
-                    y = 0;
-                    result(choice ,y);
-                }
-                else if(userChoice == 'paper'){
-                    y = 1;
-                    result(choice ,y);
-                }
-                else if(userChoice == 'scissors'){
-                    y = 2;
-                    result(choice ,y);
-                }
-                else{
-                    console.log('Enter correctly')
-                }
-            }
-
-            function result(x, y){
-                let a = y - x;
-
-                if(a == 2){
-                    console.log(`Lose! ${myArray[x]} beats ${myArray[y]}`);
-                } 
-                else if (a > 0 || a == -2){
-                    console.log(`Win! ${myArray[y]} beats ${myArray[x]}`);
-                }
-                else if (a == 0) {
-                    console.log('Draw');
-                }
-                else{
-                    console.log(`Lose! ${myArray[x]} beats ${myArray[y]}`);
-                }
-
-                count++;
-            }
-         
-        </script>
+        <div id="container">
+            <p>hello</p>
+           
+            <table>
+                <h3>Points</h3>
+                <tr>
+                    <th>Computer</th>
+                    <th>Player</th>
+                </tr>
+                <tr>
+                    <td><p id="computer">0</p></td>
+                    <td><p id="player">0</p></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+        
     </body>
 </html>
